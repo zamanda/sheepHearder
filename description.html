@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="css/bootstrap-css/bootstrap.min.css" rel="stylesheet">
+
+       <style type="text/css">
+                .st1:hover{
+                  fill:yellow;
+                }
+                .st0:hover{
+                  fill:yellow;
+                }
+                .st1:active{
+                  fill:white;
+                }
+                p{
+                  margin-left: 200px;
+                  margin-right:200px;
+                  font-family: "Courier" sans-serif;
+                }
+                body{
+                  font-family:"Courier" sans-serif;
+                }
+                .docImages{
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+        </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button> -->
+
+              <a class="navbar-brand" href="index.html" style="font-family: Courier">Sheep Heard-er</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <!-- <li class="active"> -->
+                 <li><a href="instruction.html" style="font-family: Courier">Instructions</a></li>
+                <li><a href="description.html" style="font-family: Courier">Documentation</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <!--Inline styling since internal styling doesn't take effect-->
+        <div class="title">
+          <h1 style="font-family: Courier">SHEEP HEARD-ER!</h1>
+        </div>
+        <h4 style="font-family: Courier">Team G.O.A.T.</h4>
+        <p style="font-family: Courier">Our midterm project is a game that attempts to bring the silliness out of its players. The selling point of this game is to have the player bark into their machine’s microphone to cause an event in the game if they want to win. On screen, players will see a herd of sheep and one user-controlled dog character. The player is allowed to move the dog around using the arrow keys or the WASD keys on their keyboard. Once the dog character on the screen is moved near some sheep, the player will need to bark (or make a loud/audible noise) and the sheep within a predefined radius around the dog character will move away from the dog. The player needs to maneuver the dog and bark rapidly because they only have until time runs out to get ALL the sheep back into the pen and move onto the next level! Hint: the louder the player barks, the greater the reach of the dog’s barking power.
+        <p style="font-family: Courier">Our game utilizes the microphone on the user’s machine and depends on how loud the player can get. The dog on screen will seem to be emitting a yellow light when the microphone picks up sound, letting the player know that their bark is being heard by the machine. The game’s world is constrained to the screen; no sheep may move beyond the border of the canvas, but they may freely wander into the pen (helping the player get closer to winning). The dog is also constrained to the world of the canvas. Our original goal was to allow the sheep to wrap around the screen as well as the dog, but during the trials of playing our game, we realized our game is pretty difficult to win. We tried to account for this by giving the user two minutes to play before time is up and forcing all the sheep to be visible in one space. </p>
+        <center><img src="images/dogGlow.png" width=300 height=300></center>
+        <p style="font-family: Courier">The game does have multiple levels for the greater enjoyment (or frustration) of the player. If the player manages to get past the first level by getting all ten sheep into the pen before time is up, they will be able to reach the next level where they will have to attempt to get all twenty sheep into the pen. Every time a sheep enters the pen, they bahhh and are erased from the array of sheep. Our biggest issue was attempting to make the movement of the sheep as natural as possible. We had thought to use Perlin noise to help with getting the organic motion of the sheep, but putting the actual images of the sheep into the game instead of the placeholders told a different story; the sheep looked as if they were floating in space. We also found some issues using Perlin noise when we had ellipses in place of the sheep images. The sheep were programmed to move away from each other when they collided, but their movement dictated by Perlin noise would take over after moving away a short distance. However, their motion under Perlin noise would sometimes have the sheep move toward one another again, causing a jittery/shaking movement in the sheep. We tried various algorithms and formulas to get rid of this jittering motion, but were unable to truly get rid of the unwanted motions. Instead, the images of the sheep themselves were adjusted so that it looked less unnatural. The sheep are now seen grazing on the grass as they move around the screen.</p>
+        <p style="font-family: Courier">To make the sheep and the dog look like they're actually moving instead of floating or flying to their desired destinations, we used sprite images. We had one image that contained multiple images of the dog sprite facing different directions, likewise with the sheep. Objects were created with the position and width and height of the desired image from the larger image containing the sprites instead of cutting up the larger image of all the sprites into individual sprite images. The objects were then used to determine which image of the sprite was to be used.</p>
+        <div class="docImages">
+          <center><img src="images/dogSprite.png" width=192 height=256>
+            <img src="images/sheepSprite.png" width=270 height=270></center>
+        </div>
+        <p style="font-family: Courier">We broke down the project into two parts; the first part focused on getting the technical portion of our game working and the second part worked on incorporating the images. This was very effective in letting us get the deep thinking out of the way first so that we could fix any glitches before we put the images in. We utilized GitHub so that we could each work on different parts of the game and still see what each of us were working on. This did bring about some problems with GitHub when there were multiple people working on the same thing since we did have occasions where code would be overwritten, but we managed to pull through.</p>
+        <p style="font-family: Courier">Initially, we looked at kids’ computer games for some inspiration. We had thought to make a kid friendly game, and our start screens and end screens do refelct that kid-friendly vibe, but the game can be enjoyed by people of all ages. You can play alone and bark at your own rhythm or with a group of people to join forces and increase the barking power of the dog. Gathering the sheep can be a bit of a challenge, but you can play again and again until you win! </p>
+        <p style="font-family: Courier">So, let’s get barking!</p>
+        <p style="font-family: Courier">(For maximum enjoyment, please play on Mozilla Firefox.)</p>
+  </body>
+</html>
